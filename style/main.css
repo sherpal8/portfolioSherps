@@ -1,0 +1,526 @@
+/************* --- BEM nomenclature adhered to --- ************/
+/*--- Gentle note: Some infrequent modification to BEM to avoid naming conflict ---*/
+
+/************* -- * -- *************/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/************* -- body @ mobile-first -- *************/
+
+body {
+    background:black;
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr 365px 1fr 1fr;
+    grid-template-areas:
+        " . header header header . "
+        " . main main main . "
+        " . footer footer footer . ";
+}
+
+/************* -- header: header.inc.php; -- *************/
+
+header {
+	grid-area: header;
+	padding:1em;
+}
+
+.header__nav {
+	display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.header__li {
+    display:inline;
+    margin:auto;
+}
+
+.header__li a {
+    font-size:1.1em;
+	text-decoration-line: none;
+	color:white;
+}
+
+.header__li a:hover {
+	color:orange;
+}
+
+li.active a {
+	color:orange;
+}
+
+.header__instagram {
+    font-size:1.5em;
+	color:salmon;
+}
+
+.header__twitter {
+	font-size:1.5em;
+	color:blue;
+}
+
+
+/************* -- footer: footer.inc.php; -- *************/
+
+footer {
+	grid-area: footer;
+	margin:auto;
+	height:100px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.footer__span {
+	color:white;
+	margin-bottom:8%;
+}
+
+.footer__span a {
+	text-decoration:none;
+	color:orange;
+}
+
+.footer__ul {
+	display:flex;
+}
+
+.footer__instagram {
+	color:salmon;
+	margin-right:1.5em;
+}
+
+.footer__twitter {
+	color:blue;
+	margin-left:1.5em;
+}
+
+/************* --- main - general @ mobile-first --- *************/
+main {
+	grid-area: main;
+}
+
+/************* --- side icons: icon.inc.php @ mobile-first--- *************/
+.icon__overlay {
+	position: fixed;
+	background-color:black;
+	opacity:1.0;
+	border-radius:0.2em;
+	bottom:3%;
+	left:0.5%;
+    font-size:1.3em;
+    display:flex;
+    flex-direction:column;
+    z-index:2;
+}
+
+.icon__overlay li {
+	margin:0.45em;
+	list-style-type:none;
+}
+
+.icon__overlay a {
+	color:white;
+}
+
+.icon__overlay a:hover {
+	-webkit-animation: iconChange normal 1s ease-in-out; 
+	-ms-animation: iconChange normal 1s ease-in-out; 
+	animation: iconChange normal 1s ease-in-out;
+}
+
+@-webkit-keyframes iconChange {
+	0% { color:salmon; font-size:100%; }
+	50% { color:purple; font-size:150%;}
+	100% { color:salmon; font-size:100%; }
+}
+
+@keyframes iconChange {
+	0% { color:salmon; font-size:100%; }
+	50% { color:purple; font-size:150%;}
+	100% { color:salmon; font-size:100%; }
+}
+
+.icon__overlay li.active a {
+	color:salmon;
+}
+
+/************* --- main: index.php @ mobile-first--- *************/
+.index-figure__img {
+    margin:auto;
+    z-index:0;
+	-webkit-animation: blink normal 3s infinite ease-in-out; 
+	-ms-animation: blink normal 3s infinite ease-in-out; 
+	animation: blink normal 3s infinite ease-in-out;
+}
+
+@-webkit-keyframes blink {
+	0% { opacity:1.0; }
+	30% { opacity: 0.3; }
+	100% { opacity:1.0; }
+}
+
+@keyframes blink {
+	0% { opacity:1.0; }
+	30% { opacity: 0.3; }
+	100% { opacity:1.0; }
+}
+
+.index-figure__figcaption {
+	top:10%;
+	right:4%;
+	font-size:1.2em;
+	padding:0.2em;
+	position:absolute;
+	border:0.1em solid white;
+    color:red;
+    font-weight:bolder;
+	background-color:darkblue;
+	z-index:1;
+}
+
+.index-figure__span {
+	color:white;
+}
+
+.index-div__img {
+    opacity:0.8;
+    margin:1em;
+}
+
+/************* --- main: about.php @mobile-first --- *************/
+.about-figure__image {
+    opacity:0.8;
+}
+
+.about-div__div {
+    margin-top:3em;
+}
+
+.about-main__h4 {
+	max-width:350px;
+    margin:auto;
+	color:white;
+	padding:0em;
+	text-align:center;
+	letter-spacing:0.4px;
+	word-spacing:0.7px;
+	line-height:1.5em;
+}
+
+.about-h4__quote-left {
+	color:yellow;
+	font-size:2em;
+	margin-right:0.5em;
+}
+
+.about-h4__quote-right {
+	color:yellow;
+	font-size:1em;
+	margin-left:0.5em;
+}
+
+#about-main-github_handle {
+        text-decoration-line:none;
+        color:yellow;
+}
+
+.about-main__div {
+	margin-top:1.5em;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+}
+
+.about-main__div p {
+    margin-top:1.5em;
+}
+
+.about-main__div a {
+	color:orangered; 
+	font-weight:bolder; 
+	text-decoration-line: none; 
+	font-size:1.2em;
+}
+
+.about-main__div a:hover {
+	-webkit-animation: linkChange normal 1s ease-in-out; 
+	-ms-animation: linkChange normal 1s ease-in-out; 
+	animation: linkChange normal 1s ease-in-out;
+}
+
+@-webkit-keyframes linkChange {
+	0% { color:orangered; font-size:1.2em; }
+	50% { color:salmon; font-size:1.6em; }
+	100% { color:orangered; font-size:1.2em; }
+}
+
+@keyframes linkChange {
+	0% { color:orangered; font-size:1.2em; }
+	50% { color:salmon; font-size:1.6em; }
+	100% { color:orangered; font-size:1.2em; }
+}
+
+.about-main-div__div {
+	width:auto; 
+	height:30em; 
+	margin:1em;
+	overflow-x:hidden;
+	overflow-y:auto; 
+	-webkit-overflow-scrolling:touch;
+	border:4px solid yellow;
+}
+
+.about-main__iframe {
+    height:100%;
+}
+
+/************* --- main: contact.php @ mobile-first --- *************/
+.contact__figure {
+	position:relative;
+    z-index:0;
+}
+
+.contact-figure__overlay {
+	top:1em;
+	left:1.7em;
+    position:absolute;
+	color:white;
+	text-align:center;
+	width:75%;
+	padding:1em;
+	z-index:1;
+	font-weight:bolder;
+	letter-spacing:0.5px;
+}
+
+.contact-main__div {
+	position:relative;
+	margin:4em 0 2em 0;
+}
+
+.contact-main__div video {
+	position:relative;
+	z-index:0;
+}
+
+.contact-main__overlay {
+	position:absolute;
+	top:12%;
+	left:12.5%;
+	z-index:1;
+	background-color:black;
+	opacity:0.7;
+	color:white;
+	width:65%;
+	height:9em;
+	padding:1em;
+	border:4px solid yellow;
+	font-size:14px;
+	line-height:1.5em;
+	letter-spacing:0.5px;
+}
+
+.contact-overlay__a {
+	text-decoration:none;
+	color:orange;
+}
+
+/************* --- Include: email.inc.php @ mobile-first --- *************/
+.email-form__success {
+    color:lightgreen;
+}
+
+.email-form__error {
+    color:red;
+}
+
+.contact-email__form {
+	opacity:0.88;
+	font-size:14px;
+	text-align:left;
+	margin-top:2em;
+	border:2px solid white;
+	background-color:black;
+	padding:0.5em;
+	line-height:1.4em;
+}
+
+.email-form__p {
+	margin:0.4em 0 0.6em 0;
+	font-size:12px;
+	color:lightgreen;
+}
+
+.email-form__submit {
+	border-radius:0.3em;
+	background:lightgreen;
+	font-weight:bolder;
+	color:black;
+	padding:0.5em;
+}
+
+/************ -- media query: min-width 760px e.g. iPad (regular) -- *************/
+@media only screen and (min-width: 760px) {
+    
+    /*--   General @ iPad (regular) --*/
+	body {
+		display:grid;
+		grid-template-columns: 1fr 1fr 760px 1fr 1fr;
+		grid-template-areas:
+		    " . header header header . "
+		    " main main main main main "
+		    " . footer footer footer . ";
+    }
+
+    /*--   Side icon overlay: icon.inc.php @ iPad (regular) --*/
+    .icon__overlay {
+    	left:0.5%;
+    	font-size:2em;
+    }
+
+    /*--   Home: index.php @ iPad (regular) --*/
+    .index-figure__figcaption {
+	top:6%;
+	right:8%;
+	font-size:2em;
+	padding:0.2em;
+    }
+
+    /*--   About: about.php @ iPad (regular) --*/
+    .about-main__h4 {
+		margin-top:3em;
+    }
+
+    /*--   Contact: contact.php @ iPad (regular) --*/
+	.contact-main__overlay {
+		top:4.5%;
+		left:9.8%;
+		width:75%;
+		height:20em;
+		opacity:0.7;
+		font-size:18px;
+	    border:4px solid #292929;
+	}
+
+	.contact-main__h3 {
+    	margin:auto;
+    	margin-top:4em;
+    	width:54%;
+    	border:4px solid yellow;
+    	padding:1em;
+    }
+
+
+    /*-- Include: email.inc.php @ iPad (regular) --*/
+   .email-form__success {
+    	margin-left:16%;
+    }
+
+    .email-form__error {
+    	font-size:20px;
+    	margin-left:17.5%;
+    }
+
+    .contact-email__form {
+    	margin-top:4%;
+		font-size:18px;
+		margin-left:30.5%;
+		width:45%;
+		padding:1.5em;
+		line-height:1.2em;
+    }
+
+	.email-form__p {
+		font-size:14px;
+	}
+}
+
+/************ -- media query: min-width 1000px e.g. iPad PRO -- *************/
+@media only screen and (min-width: 1000px) {
+
+    /*--   Index: index.php @ iPad Pro  --*/
+    .index-figure__figcaption {
+		font-size:2.5em;
+		padding:0.3em;
+    }
+
+	/*--   Contact: contact.php @ iPad Pro  --*/
+	.contact-main__overlay {
+		left:10.5%;
+		height:27.3em;
+	}
+
+	.contact-main__h3 {
+    	margin-top:8em;
+    	width:40%;
+    }
+
+    /*-- Include: email.inc.php @ iPad Pro --*/
+   .email-form__success {
+    	margin-left:17%;
+    }
+
+    .contact-email__form {
+    	width:34%;
+		margin-left:38%;
+		margin-top:5%;
+    }
+}
+
+/*********** -- media query: min-width 1100px e.g. laptop -- ************/
+@media only screen and (min-width: 1100px) {
+
+    /*--   General @ laptop --*/
+    body {
+		display:grid;
+		grid-template-columns: 1fr 1fr 1000px 1fr 1fr;
+		grid-template-areas:
+		" . header header header . "
+		" main main main main main "
+		" . footer footer footer . ";
+    }
+
+    /*--   Index/ Home: index.php @ laptop   --*/
+    .index-figure__figcaption {
+    	font-size:3em;
+    }
+
+    /*--   About: about.php @ laptop   --*/
+    .about-main__div {
+		flex-direction:row;
+	}
+
+    /*--   Contact: contact.php @ laptop   --*/
+	.contact-main__overlay {
+		top:4.5%;
+		left:9.8%;
+		width:77.8%;
+		height:39em;
+		opacity:0.8;
+	}
+
+	.contact-main__h3 {
+    	margin-top:12em;
+    }
+
+    /*-- Include: email.inc.php @ laptop --*/
+   .email-form__success {
+    	margin-left:19%;
+    }
+
+    .contact-email__form {
+		margin-top:5%;
+		width:25.5%;
+		margin-left:44%;
+    }
+}
+
